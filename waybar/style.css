@@ -1,0 +1,115 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-size: 14px;
+    font-family: monospace;
+}
+
+window#waybar {
+    background-color: transparent;
+    border: none;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background: black;
+}
+
+#workspaces button.focused {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode,
+#clock,
+#idle_inhibitor,
+#keyboard-state,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#bluetooth,
+#tray {
+    padding: 0 5px;
+    color: white;
+    background-color: transparent;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#mode {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#idle_inhibitor.activated {
+    background-color: black;
+    color: yellow;
+}
+
+#keyboard-state > label {
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#keyboard-state > label.locked {
+    background-color: yellow;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    color: red;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: greenyellow;
+    border: solid 1px green;
+}
+
+#battery.full {
+    background-color: green;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
