@@ -1,0 +1,5 @@
+[options]
+background = 000000
+
+[binds]
+<Delete> = exec rm "$imv_current_file"; close

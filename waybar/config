@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces","tray", "sway/mode", "sway/scratchpad"],
     "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor","keyboard-state", "network","pulseaudio","backlight","battery","bluetooth"],
+    "modules-right": ["idle_inhibitor", "keyboard-state", "network","pulseaudio","backlight", "battery","bluetooth"],
 
     "keyboard-state": {
         "numlock": false,
