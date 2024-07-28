@@ -54,8 +54,14 @@
 #
 # Colors
 #
-    client.focused      #64727d    #0f0f0f         #ffcc00		 #64727d         #64727d
-    client.unfocused    #333333    #222222         #888888		 #292d2e         #222222
+# Customize colors for title bars
+client.focused          #32cd32 #32cd32 #ffffff #32cd32 #32cd32
+client.unfocused        #333333 #222222 #888888 #222222 #222222
+client.urgent           #2f343a #900000 #ffffff #900000 #900000
+
+# Set border style and size
+for_window [app_id="^.*"] border pixel 1
+
 
 ### Key bindings
 #
@@ -84,7 +90,8 @@
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     
 	# Shut down
-	bindsym $mod+Shift+s exec systemctl poweroff
+	bindsym $mod+Shift+s exec ~/.config/wofi/exit.sh
+	bindsym XF86PowerOff exec ~/.config/wofi/exit.sh
     # Lock screen
     bindsym $mod+Backspace exec $lock_screen    
 

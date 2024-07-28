@@ -1,5 +1,6 @@
 * {
     font-size: 14px;
+	font-size: 16px;
 	font-family: monospace;
 }
 
@@ -11,7 +12,7 @@ window#waybar {
 #workspaces button {
     padding: 0 10px;
     color: #ffffff;
-    border-radius: 8px;
+    border-radius: 0px;
 }
 
 #workspaces button:hover {
@@ -21,6 +22,7 @@ window#waybar {
 #workspaces button.focused {
     font-weight: bold;
     color: #ffcc00;
+	color: lime;
 }
 
 #workspaces button.urgent {
@@ -41,6 +43,7 @@ window#waybar {
     color: white;
     background-color: transparent;
     border-radius: 8px;
+	border-radius:0;
     margin-left: 5px;
     margin-right: 5px;
 }
