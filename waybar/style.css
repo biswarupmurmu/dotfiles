@@ -5,6 +5,7 @@
 }
 
 window#waybar {
+	background-color: #1a1b26;
     background-color: transparent;
     border: none;
 }
@@ -12,6 +13,7 @@ window#waybar {
 #workspaces button {
     padding: 0 10px;
     color: #ffffff;
+	color: #c0caf5;
     border-radius: 0px;
 }
 
@@ -41,6 +43,7 @@ window#waybar {
 #tray {
     padding: 0 5px;
     color: white;
+	color: #c0caf5;
     background-color: transparent;
     border-radius: 8px;
 	border-radius:0;
