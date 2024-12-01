@@ -50,12 +50,12 @@
     "clock": {
         "timezone": "Asia/Kolkata",
         "interval": 1,
-        "format": "{:%I:%M %p %a %d %b}" // https://cplusplus.com/reference/ctime/strftime/
+        "format": " {:%I:%M %p %a %d %b}" // https://cplusplus.com/reference/ctime/strftime/
     },
 
     "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": [""],
+        "format": "{icon} {percent}%",
+        "format-icons": [""],
         "on-scroll-up":"brightnessctl set 5%+",
         "on-scroll-down":"brightnessctl set 5%-"
     },
@@ -66,8 +66,8 @@
             "warning": 30,
             "critical": 25
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -76,7 +76,7 @@
     },
 
     "network": {
-        "format-wifi": "{essid} ",
+        "format-wifi": " {essid}",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
@@ -86,12 +86,12 @@
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}%  {format_source}",
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": " {volume}% {format_source}",
         // "format-bluetooth-muted": " {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source": " {volume}%",
+        "format-source-muted": " 0%",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

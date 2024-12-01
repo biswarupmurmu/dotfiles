@@ -20,7 +20,7 @@ return {
 		-- 	callback = function()
 		-- 		lint.try_lint()
 		-- 	end,
-		-- })
+			-- })
 
 		vim.keymap.set("n", "<leader>l", function()
 			lint.try_lint()

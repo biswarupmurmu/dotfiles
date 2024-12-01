@@ -31,12 +31,12 @@
 #
 # Touchpad
 #
-	input "2:7:SynPS/2_Synaptics_TouchPad" {
-		dwt enabled
-		tap enabled
-		natural_scroll enabled
-		middle_emulation enabled
-	}
+	#input "2:7:SynPS/2_Synaptics_TouchPad" {
+		#dwt enabled
+	#	tap enabled
+	#	natural_scroll enabled
+	#	middle_emulation enabled
+	#}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -61,6 +61,8 @@ client.urgent           #2f343a #900000 #ffffff #900000 #900000
 
 # Set border style and size
 for_window [app_id="^.*"] border pixel 1
+#for_window [con_mark=__focused__] opacity 1
+
 
 
 ### Key bindings
@@ -108,7 +110,7 @@ for_window [app_id="^.*"] border pixel 1
 	bindsym Print+s exec grimshot save screen
 
     # Launch Telegram
-    bindsym $mod+t exec flatpak kill org.telegram.desktop || flatpak run org.telegram.desktop
+    # bindsym $mod+t exec flatpak kill org.telegram.desktop || flatpak run org.telegram.desktop
 
 	# Clipboard manager
 	exec wl-paste -t text --watch clipman store --no-persist

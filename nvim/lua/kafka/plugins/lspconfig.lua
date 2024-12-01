@@ -43,15 +43,50 @@ return {
 		end
 
 		-- document existing key chains
-		require("which-key").register({
-			["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-			["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-			["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
-			["<leader>h"] = { name = "More git", _ = "which_key_ignore" },
-			["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-			["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-			["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-		})
+		-- require("which-key").register({
+		-- 	-- ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
+		-- 	-- ["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
+		-- 	-- ["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
+		-- 	-- ["<leader>h"] = { name = "More git", _ = "which_key_ignore" },
+		-- 	-- ["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
+		-- 	-- ["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
+		-- 	-- ["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
+		-- 	--
+		-- 	-- { "", desc = "<leader>s_", hidden = true },
+		-- 	-- { "", desc = "<leader>g_", hidden = true },
+		-- 	-- { "", group = "[G]it" },
+		-- 	-- { "", group = "More git" },
+		-- 	-- { "", group = "[R]ename" },
+		-- 	-- { "", desc = "<leader>h_", hidden = true },
+		-- 	-- { "", desc = "<leader>r_", hidden = true },
+		-- 	-- { "", desc = "<leader>d_", hidden = true },
+		-- 	-- { "", desc = "<leader>c_", hidden = true },
+		-- 	-- { "", group = "[W]orkspace" },
+		-- 	-- { "", group = "[D]ocument" },
+		-- 	-- { "", desc = "<leader>w_", hidden = true },
+		-- 	-- { "", group = "[C]ode" },
+		-- 	-- { "", group = "[S]earch" },
+		--
+		--
+  --   -- { "", group = "[G]it" },
+  --   -- { "", group = "[D]ocument" },
+  --   -- { "", group = "[C]ode" },
+  --   -- { "", group = "[S]earch" },
+  --   -- { "", group = "[W]orkspace" },
+  --   -- { "", group = "More git" },
+  --   -- { "", group = "[R]ename" },
+  --   -- { desc = "", hidden = true, mode = { "n", "n", "n", "n", "n", "n", "n" } },
+		--
+		--
+  --   { "", group = "[G]it" },
+  --   { "", group = "[W]orkspace" },
+  --   { "", group = "More git" },
+  --   { "", group = "[R]ename" },
+  --   { "", group = "[S]earch" },
+  --   { "", group = "[D]ocument" },
+  --   { "", group = "[C]ode" },
+  --   { desc = "", hidden = true, mode = { "n", "n", "n", "n", "n", "n", "n" } },
+		-- })
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
@@ -67,6 +102,11 @@ return {
 					},
 				},
 			},
+		})
+		-- configure clangd language server
+		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 		-- configure emmet language server
 		lspconfig["emmet_ls"].setup({
@@ -86,7 +126,7 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-		lspconfig["tsserver"].setup({
+		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

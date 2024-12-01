@@ -4,5 +4,5 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
-	vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }),
+	vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }),
 }
