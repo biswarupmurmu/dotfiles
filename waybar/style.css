@@ -10,27 +10,30 @@ window#waybar {
     border: none;
 }
 
+
+
 #workspaces button {
     padding: 0 10px;
-    color: #ffffff;
-	color: #c0caf5;
+	color: #4e9dbf;
     border-radius: 0px;
 }
 
 #workspaces button:hover {
-    background: black;
+	background: inherit;
+	background-color: inherit;
+	border: solid transparent;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     font-weight: bold;
-    color: #ffcc00;
-	color: lime;
+	color: white;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
+#workspaces,
 #mode,
 #clock,
 #idle_inhibitor,
@@ -40,15 +43,17 @@ window#waybar {
 #backlight,
 #battery,
 #bluetooth,
+#wireplumber,
+#memory,
+#cpu,
 #tray {
-    padding: 0 5px;
-    color: white;
-	color: #c0caf5;
-    background-color: transparent;
-    border-radius: 8px;
-	border-radius:0;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding: 0 15px;
+	margin: 4px 5px;
+	color: black;
+	border-radius: 16px;
+	background-color: #2a1a5e;
+	color: #4e9dbf;
+	border: solid #4e9dbf 1px;
 }
 
 @keyframes blink {
@@ -89,6 +94,7 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
+	padding-right: 1rem;
     background-color: #f53c3c;
     color: #ffffff;
     animation-name: blink;
@@ -99,6 +105,7 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
+	padding-right: 1rem;
     background-color: #f53c3c;
     color: #ffffff;
 }

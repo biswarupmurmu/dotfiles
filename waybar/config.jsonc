@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "top", // Waybar position (top|bottom|left|right)
     // "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
@@ -9,55 +9,59 @@
     "modules-left": [
         "hyprland/workspaces"
     ],
-    // "modules-center": [
-    //     "sway/window"
-    // ],
+    "modules-center": [
+        "sway/window",
+		"clock"
+    ],
     "modules-right": [
-        "mpd",
+		"wireplumber",
         // "idle_inhibitor",
-        "pulseaudio",
+        //"pulseaudio",
         "network",
         // "power-profiles-daemon",
-        // "cpu",
-        // "memory",
+        "cpu",
+        "memory",
         // "temperature",
         // "backlight",
         // "keyboard-state",
         // "sway/language",
         "battery",
         // "battery#bat2",
-        "clock",
         "tray"
-        // "custom/power"
+        // "custom/power",
+		// "clock"
     ],
-    // Modules configuration
-     // "hyprland/workspaces": {
-     //     "disable-scroll": true,
-     //     "all-outputs": true,
-     //     "warp-on-scroll": false,
-     //     "format": "{id}.
-     //     "format-icons": {
-     //         "1": "",
-     //         "1": " ",
-     //         "2": "",
-     //         "3": "",
-     //         "4": "",
-     //         "5": "",
-     //         "urgent": "",
-     //         "focused": "",
-     //         "default": ""
-     //     }
-     // },
+  //   // Modules configuration
+  //    "hyprland/workspaces": {
+  //        "disable-scroll": true,
+  //        "all-outputs": true,
+  //        "warp-on-scroll": false,
+  //        // "format": "{id} {icon}",
+		// "format": "<sub>{id}</sub> {icon}", // <sub>{icon}</sub>
+  //        "format-icons": {
+  //            "1": "",
+  //            "2": "󰈹",
+  //            //"2": " ",
+  //            "3": "",
+  //            "4": "",
+  //            "5": "",
+  //            "6": "",
+  //            "urgent": "",
+  //            "focused": "",
+  //            "default": ""
+  //        }
+  //    },
 
 "hyprland/workspaces": {
   // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#workspaces
-  "format": "<sub>{id}</sub> {windows}", // <sub>{icon}</sub>
-  "format-window-separator": " ",
+  //"format": "<sub>{id}</sub> {windows}", // <sub>{icon}</sub>
+  "format": "<sup>{id}</sup> {windows}", // <sub>{icon}</sub>
+  "format-window-separator": "  ",
   "window-rewrite-default": "",
   "window-rewrite": {
     "title<.*youtube.*>": "",
     "class<firefox>": "󰈹",
-    "kitty": "", 
+    "kitty": "", 
     "class<kitty> title<*nvim.*>": "",
     "class<kitty> title<*nv.*>": "",
 	},
@@ -144,7 +148,7 @@
             "warning": 30,
             "critical": 25
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% {icon} ",
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
@@ -170,7 +174,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": " ",
+        "format-wifi": "  {signalStrength}",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
@@ -197,18 +201,13 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
+	"wireplumber": {
+    "format": "  {volume}",
+    "format-muted": "",
+    // "on-click": "helvum",
+    "max-volume": 150,
+    "scroll-step": 0.2
+},
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,

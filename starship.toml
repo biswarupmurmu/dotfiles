@@ -6,6 +6,9 @@ format = 'via [󰢱 $version](bold blue) '
 symbol = ' '
 pyenv_version_name = true
 
+[rust]
+symbol = ''
+
 [nodejs]
 format = 'via [ $version](bold green) '
 
@@ -15,9 +18,9 @@ ahead = '󰑮'
 behind = '😰'
 diverged = '😵'
 up_to_date = '✓'
-untracked = '🤷'
+untracked = '󰱴'
 stashed = '📦'
-modified = '📝'
+modified = ''
 staged = '[++\($count\)](green)'
 renamed = '👅'
 deleted = '🗑'
