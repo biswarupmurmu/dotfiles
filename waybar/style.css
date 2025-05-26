@@ -46,6 +46,7 @@ window#waybar {
 #wireplumber,
 #memory,
 #cpu,
+#temperature,
 #tray {
     padding: 0 15px;
 	margin: 4px 5px;
