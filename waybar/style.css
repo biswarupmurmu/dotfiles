@@ -1,12 +1,13 @@
 * {
     font-size: 14px;
 	font-size: 16px;
-	font-family: monospace;
+	font-family: FiraCode Nerd Font;
 }
 
 window#waybar {
 	background-color: #1a1b26;
-    background-color: transparent;
+	background-color: black;
+	background-color: transparent;
     border: none;
 }
 
@@ -15,6 +16,7 @@ window#waybar {
 #workspaces button {
     padding: 0 10px;
 	color: #4e9dbf;
+	color: #ffffff;
     border-radius: 0px;
 }
 
@@ -27,6 +29,7 @@ window#waybar {
 #workspaces button.active {
     font-weight: bold;
 	color: white;
+	color: green;
 }
 
 #workspaces button.urgent {
@@ -52,9 +55,12 @@ window#waybar {
 	margin: 4px 5px;
 	color: black;
 	border-radius: 16px;
-	background-color: #2a1a5e;
-	color: #4e9dbf;
+	border-radius: 0px;
+	background-color: #000000;
+	background-color: transparent;
+	color: #ffffff;
 	border: solid #4e9dbf 1px;
+	border: none;
 }
 
 @keyframes blink {

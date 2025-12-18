@@ -10,10 +10,11 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "sway/window",
-		"clock"
+        "sway/window"
+		// "clock"
     ],
     "modules-right": [
+		"clock",
 		"wireplumber",
         // "idle_inhibitor",
         //"pulseaudio",
@@ -62,6 +63,8 @@
     "title<.*youtube.*>": "",
     "class<firefox>": "󰈹",
     "kitty": "", 
+    "foot": "", 
+	"obs" : "",
     "class<kitty> title<*nvim.*>": "",
     "class<kitty> title<*nv.*>": "",
 	},
@@ -174,7 +177,9 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         // "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-wifi": "  {signalStrength}",
+        //"format-wifi": "  {signalStrength}",
+        //"format-wifi": "  {essid}",
+        "format-wifi": " ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP) ",
