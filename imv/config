@@ -1,6 +1,0 @@
-[options]
-background = 000000
-title_text = $(imv_current_file)
-
-[binds]
-<Delete> = exec rm "$imv_current_file"; close
